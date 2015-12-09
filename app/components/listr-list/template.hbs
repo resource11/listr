@@ -1,0 +1,87 @@
+{{!-- <ul>
+  <h2>Favorite Things</h2>
+  <li>Sleep</li>
+  <li>Cats</li>
+  <li>Star Wars</li>
+  <li>Keith Hulu</li>
+</ul> --}}
+
+{{!-- yield is for handlebars helpers. look it up --}}
+
+
+
+{{!-- make the ul part of the implementation of the listr-list in the component.js file --}}
+{{!--   <h2>Favorite Things</h2>
+
+{{listr-list/listr-item}}
+  <li>Sleep</li>
+  <li>Cats</li>
+  <li>Star Wars</li>
+  <li>Keith Hulu</li> --}}
+
+
+
+{{!-- remove li and put in listr-item template instead --}}
+
+{{!-- add each here because it's the parent --}}
+
+{{!-- create a collection called items in the parent component.js to render the whole list --}}
+
+
+{{!-- <h2>Favorite Things</h2>
+
+{{#each items}}
+  {{listr-list/listr-item}}
+{{else}}
+  This list is empty! Good job?
+{{/each}}
+
+{{yield}} --}}
+
+
+{{!-- item is a key in the component obj for listr-list --}}
+
+
+{{!-- inside listr-item template, anythwere there's a word item, it should bind that to localItem (for each member we get when we're interating through the fields) --}}
+{{!--
+the thing on the left (item) is the variable, the thing on the right (item) is the item the thing on the left is binded to --}}
+
+
+{{!-- <h2>Favorite Things</h2>
+
+{{#each items as |localItem|}}
+  {{listr-list/listr-item targetItem=localItem}}
+{{else}}
+  This list is empty! Good job?
+{{/each}}
+
+{{yield}} --}}
+
+{{!--
+<h2>Favorite Things</h2>
+
+<h1>{{hidden}}</h1>
+
+{{#each items as |item|}}
+  {{listr-list/listr-item item=item}}
+{{else}}
+  This list is empty! Good job?
+{{/each}}
+
+{{yield}}
+ --}}
+
+
+<h2 {{action 'toggleList'}}>Favorite Things</h2>
+
+{{#unless hidden}}
+
+  {{#each items as |item|}}
+    {{listr-list/listr-item item=item}}
+  {{else}}
+    This list is empty! Good job?
+  {{/each}}
+
+{{/unless }}
+
+{{yield}}

@@ -1,0 +1,32 @@
+{{!--  li moved into here and removed the li, because the tagName is now in listr-item compenent.js --}}
+
+{{!-- reference the item from the parent --}}
+
+{{!-- {{targetItem}}
+
+
+{{yield}}
+ --}}
+
+
+{{!-- {{item}}
+
+
+{{yield}} --}}
+
+
+
+{{!-- {{strikethrough}}
+
+{{item}}
+
+{{yield}} --}}
+
+
+{{#unless strikethrough}}
+  {{item}}
+{{else}}
+  <strike>{{item}}</strike>
+{{/unless}}
+
+{{yield}}
